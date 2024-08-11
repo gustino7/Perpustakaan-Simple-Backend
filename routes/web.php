@@ -3,6 +3,10 @@
 use App\Http\Controllers\Api\BukuController;
 use Illuminate\Support\Facades\Route;
 
+Route::get('/', function () {
+    return redirect()->route('home');
+});
+
 Route::get('/register', function () {
     return view('Auth/register');
 });
@@ -13,7 +17,7 @@ Route::get('/login', function () {
 
 Route::get('/list-buku', function () {
     return view('Buku/list_buku');
-});
+})->name('home');
 
 Route::get('/store-buku', function () {
     return view('Buku/store_buku');
